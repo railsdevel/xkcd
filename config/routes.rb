@@ -1,4 +1,5 @@
 XKCD::Application.routes.draw do
+  root :to => 'comics#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
