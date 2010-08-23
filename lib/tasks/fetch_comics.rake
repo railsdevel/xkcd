@@ -8,7 +8,7 @@ task :fetch_comics => :environment do
     title = doc.css('div.s > h1').first.content
     src = doc.css('div.s > img').first['src']
     desc = doc.css('div.s > img').first['title']
-    {:id => comic_id, :title => title, :src => src, :description => desc}
+    {:title => title, :src => src, :description => desc}
   end
 
   def count
@@ -20,12 +20,12 @@ task :fetch_comics => :environment do
   Rake::Task['db:reset'].invoke
 
   c = count
-  p Comic.all
-  (1..c).each do |i|
-    details = fetch i
-    p details
-    new_comic = Comic.new(details)
-    p new_comic
-    new_comic.save
+  puts "Fetching #{c} comics"
+  for i in 1..c
+    comic = fetch i rescue next
+    comic = Comic.new(comic)
+    comic.id = i
+    p comic
+    comic.save
   end
 end
