@@ -2,10 +2,10 @@
   <h1><%= comic.title %></h1>
   <nav>
     <div class="prev">     
-      <%= link_to raw("&larr;"), Comic.find(comic.id - 1) unless comic.first?%>
+      <%= link_to raw("&larr;"), comic.prev unless comic.first? %>
     </div>
     <div class="next">
-      <%= link_to raw("&rarr;"), Comic.find(comic.id + 1) unless comic.last? %>
+      <%= link_to raw("&rarr;"), comic.next unless comic.last? %>
     </div>
   </nav>
   <%= image_tag comic.src %>
