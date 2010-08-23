@@ -1,6 +1,8 @@
 XKCD::Application.routes.draw do
   root :to => 'comics#index'
-  resources :comics
+#  resources :comics
+
+  match ':id' => 'comics#show', :as => :comic
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
