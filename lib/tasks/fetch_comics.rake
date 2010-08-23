@@ -2,8 +2,6 @@ task :fetch_comics => :environment do
 #  Testing out the API
   require 'open-uri'
 
-
-  
   def fetch comic_id
     url = "http://www.xkcd.com/#{comic_id}"
     doc = Nokogiri::HTML(open(url))
@@ -20,8 +18,8 @@ task :fetch_comics => :environment do
   end
 
   Rake::Task['db:reset'].invoke
-  
-  c = count/100
+
+  c = count
   p Comic.all
   (1..c).each do |i|
     details = fetch i
