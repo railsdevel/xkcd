@@ -14,7 +14,7 @@ task :fetch_comics => :environment do
   def count
     url = "http://www.xkcd.com/rss.xml"
     doc = Nokogiri::XML(open(url))
-    doc.css('link')[2].content[/\/(\d+)\/$/, 1].to_i
+    doc.css('link')[1].content[/\/(\d+)\/$/, 1].to_i
   end
 
   Rake::Task['db:reset'].invoke
