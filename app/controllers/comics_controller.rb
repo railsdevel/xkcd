@@ -1,10 +1,15 @@
 class ComicsController < ApplicationController
   def index
-    @comics = Comic.last
+    @comic = Comic.last
   end
 
   def show
-    @comics = Comic.find(params[:id])
-    render 'index'
+    @comic = Comic.find_by_id(params[:id])
+    if @comic
+      render 'index'
+    else
+      redirect_to :root
+    end
   end
+
 end
