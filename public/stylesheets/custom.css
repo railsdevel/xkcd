@@ -1,4 +1,4 @@
-body, html { background:#f5f5f5; margin:0; padding:0; font-family:Georgia; }
+body, html { background:#f5f5f5; margin:0; padding:0; font-family:Georgia; font-size:100%;}
 #container { width:780px; text-align:center; background:white; padding:1em;
     margin: 1em auto 0 auto; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
 body { border-top: 4px solid #777; }
@@ -7,4 +7,6 @@ a { text-decoration:none; }
 nav { display:block; }
     nav .prev { float:left; }
     nav .next { float:right; }
-.description { padding:10px; }
+.description { padding:2em; }
+footer { display:block; font-size:0.7em; margin-top:1em;}
+    footer a { color:#000; }

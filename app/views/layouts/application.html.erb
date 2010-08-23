@@ -6,8 +6,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+    <div id="container">
+        <%= yield %>
+        <footer>
+            Comics by <%= link_to "Randall Munroe", 'http://xkcd.com' %>.
+        </footer>
+    </div>
 </body>
 </html>
