@@ -1,5 +1,10 @@
 class ComicsController < ApplicationController
   def index
-    @comics = Comic.all
+    @comics = Comic.last
+  end
+
+  def show
+    @comics = Comic.find(params[:id])
+    render 'index'
   end
 end

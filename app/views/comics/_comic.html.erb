@@ -1,5 +1,13 @@
-<div class="comic">
-  <div class="title"><%= comic.title %></div>
-  <div class="src"><%= comic.src %></div>
-  <div class="description"><%= comic.description %></div>
+<div id="comic">
+  <h1><%= comic.title %></h1>
+  <nav>
+    <div class="prev">     
+      <%= link_to raw("&larr;"), Comic.find(comic.id - 1) unless comic.first?%>
+    </div>
+    <div class="next">
+      <%= link_to raw("&rarr;"), Comic.find(comic.id + 1) unless comic.last? %>
+    </div>
+  </nav>
+  <%= image_tag comic.src %>
+  <%= content_tag :div, comic.description, :class => 'description' %>
 </div>
