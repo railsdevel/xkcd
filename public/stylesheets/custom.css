@@ -7,3 +7,4 @@ a { text-decoration:none; }
 nav { display:block; }
     nav .prev { float:left; }
     nav .next { float:right; }
+.description { padding:10px; }
