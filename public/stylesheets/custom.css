@@ -1,0 +1,9 @@
+body, html { background:#f5f5f5; margin:0; padding:0; font-family:Georgia; }
+#container { width:780px; text-align:center; background:white; padding:1em;
+    margin: 1em auto 0 auto;}
+body { border-top: 4px solid #777; }
+body, a, a:hover { color:#333; }
+a { text-decoration:none; }
+nav { display:block; }
+    nav .prev { float:left; }
+    nav .next { float:right; }
